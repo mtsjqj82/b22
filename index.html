@@ -1,68 +1,756 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>B22</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      background: #050505;
-      color: white;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 60px 20px;
+<title>B22 — Zone 22</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:#030303;
+    color:#ededed;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:18px 6%;
+    background:rgba(0,0,0,.94);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid #222;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:999;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:900;
+    letter-spacing:5px;
+}
+
+.links a{
+    color:#888;
+    text-decoration:none;
+    margin-left:18px;
+    font-size:11px;
+    letter-spacing:1px;
+}
+
+.links a:hover{
+    color:white;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:30px;
+}
+
+.hero h1{
+    font-size:clamp(110px,28vw,290px);
+    line-height:.75;
+    margin:0;
+    letter-spacing:-10px;
+}
+
+.hero h2{
+    margin-top:45px;
+    font-weight:400;
+    letter-spacing:7px;
+    font-size:clamp(17px,4vw,30px);
+}
+
+.hero p{
+    color:#777;
+    max-width:650px;
+    line-height:1.7;
+    margin-top:30px;
+}
+
+.alert{
+    margin-top:35px;
+    border:1px solid #444;
+    padding:13px 22px;
+    letter-spacing:4px;
+    font-size:11px;
+}
+
+section{
+    max-width:1000px;
+    margin:auto;
+    padding:110px 25px;
+    border-top:1px solid #1b1b1b;
+}
+
+.number{
+    color:#555;
+    font-size:11px;
+    letter-spacing:4px;
+}
+
+h2{
+    font-size:clamp(45px,8vw,78px);
+    margin:15px 0 40px;
+    line-height:.95;
+}
+
+.big{
+    font-size:23px;
+    line-height:1.65;
+    max-width:800px;
+}
+
+.card{
+    background:#090909;
+    border:1px solid #222;
+    padding:28px;
+    margin:25px 0;
+}
+
+.card h3{
+    margin-top:0;
+    font-size:25px;
+    letter-spacing:1px;
+}
+
+.row{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    padding:15px 0;
+    border-bottom:1px solid #202020;
+}
+
+.row:last-child{
+    border-bottom:none;
+}
+
+.row span:first-child{
+    color:#777;
+}
+
+.row span:last-child{
+    font-weight:bold;
+    text-align:right;
+}
+
+.quote{
+    font-size:clamp(28px,5vw,48px);
+    font-weight:900;
+    line-height:1.2;
+    margin:60px 0;
+}
+
+.massive{
+    font-size:clamp(55px,12vw,110px);
+    font-weight:900;
+    line-height:1;
+    margin-top:55px;
+}
+
+.sub{
+    color:#666;
+    font-size:15px;
+    margin-top:8px;
+    margin-bottom:45px;
+}
+
+.archive{
+    padding:30px 0;
+    border-bottom:1px solid #222;
+}
+
+.archive small{
+    color:#555;
+    letter-spacing:3px;
+}
+
+.archive h3{
+    font-size:25px;
+    margin:9px 0 15px;
+}
+
+.archive p{
+    line-height:1.6;
+}
+
+footer{
+    border-top:1px solid #1b1b1b;
+    text-align:center;
+    padding:80px 20px;
+    color:#333;
+    letter-spacing:5px;
+    font-size:11px;
+}
+
+@media(max-width:700px){
+
+    .links{
+        display:none;
     }
 
-    h1 {
-      font-size: 70px;
-      margin-bottom: 10px;
+    .hero h1{
+        letter-spacing:-5px;
     }
 
-    h2 {
-      font-size: 28px;
-      font-weight: normal;
+    .row{
+        font-size:14px;
     }
 
-    p {
-      max-width: 700px;
-      margin: 40px auto;
-      font-size: 20px;
-      line-height: 1.6;
-    }
+}
 
-    .warning {
-      font-size: 14px;
-      opacity: 0.5;
-      margin-top: 80px;
-    }
-  </style>
+</style>
 </head>
 
 <body>
 
-  <h1>B22</h1>
 
-  <h2>L'endroit le plus dangereux de la planète.</h2>
+<nav>
 
-  <p>
-    Oubliez Medellín. Oubliez les favelas. Oubliez Gotham City.
-    À Bevaix existe une zone dont le simple nom suffit à glacer le sang :
-    <strong>la B22.</strong>
-    <br><br>
-    Ici, le taux de survie est une notion abstraite.
-    Les scooters résonnent dans la nuit.
-    Les légendes se transmettent de génération en génération.
-    Et quand un Forza apparaît au loin, il est déjà trop tard.
-  </p>
+<div class="logo">B22</div>
 
-  <p>
-    Bienvenue à la 22.
-  </p>
+<div class="links">
+<a href="#est">EST-B22</a>
+<a href="#forza">FORZA</a>
+<a href="#fleurier">FLEURIER</a>
+<a href="#stats">STATS</a>
+<a href="#archives">ARCHIVES</a>
+<a href="#rap">RAP</a>
+</div>
 
-  <div class="warning">
-    Site humoristique / satirique.
-  </div>
+</nav>
+
+
+<!-- ACCUEIL -->
+
+<div class="hero">
+
+<h1>B22</h1>
+
+<h2>BEVAIX — ZONE 22</h2>
+
+<p>
+Sur les cartes : Bevaix.<br>
+Sur le terrain : <strong>la 22.</strong>
+</p>
+
+<div class="alert">
+NIVEAU DE MENACE : 22 / 10
+</div>
+
+</div>
+
+
+<!-- EST B22 -->
+
+<section id="est">
+
+<div class="number">01 — GÉRANT DE LA 22</div>
+
+<h2>EST-B22</h2>
+
+<p class="big">
+De son vrai prénom <strong>Esteban</strong>.
+Dans la zone, un autre nom s'est imposé :
+<strong>EST-B22.</strong>
+</p>
+
+<div class="card">
+
+<h3>FICHE B22</h3>
+
+<div class="row">
+<span>Nom</span>
+<span>EST-B22</span>
+</div>
+
+<div class="row">
+<span>Prénom</span>
+<span>Esteban</span>
+</div>
+
+<div class="row">
+<span>Zone</span>
+<span>B22</span>
+</div>
+
+<div class="row">
+<span>Statut</span>
+<span>Chef de la 22</span>
+</div>
+
+<div class="row">
+<span>Monture</span>
+<span>Honda Forza</span>
+</div>
+
+<div class="row">
+<span>Spécialité</span>
+<span>Lever en Y</span>
+</div>
+
+<div class="row">
+<span>Capacité passive</span>
+<span>Œil aiguisé</span>
+</div>
+
+<div class="row">
+<span>Signal BAC</span>
+<span>ARAH</span>
+</div>
+
+<div class="row">
+<span>Activité actuelle</span>
+<span>Rap</span>
+</div>
+
+</div>
+
+<p>
+L'une des caractéristiques les plus connues d'Est-b22 reste
+son fameux <strong>œil aiguisé</strong>.
+Une voiture banalisée peut encore être à l'autre bout de la rue :
+Esteban a déjà compris.
+</p>
+
+<p class="quote">
+« Quand le ARAH tombe,<br>
+la décision est déjà prise. »
+</p>
+
+</section>
+
+
+<!-- FORZA -->
+
+<section id="forza">
+
+<div class="number">02 — VÉHICULE DE LA 22</div>
+
+<h2>LE FORZA</h2>
+
+<p class="big">
+À la B22, certains reconnaissent une personne à son visage.
+Est-b22 peut être reconnu uniquement au bruit de son
+<strong>Honda Forza</strong>.
+</p>
+
+<div class="card">
+
+<h3>HONDA FORZA</h3>
+
+<div class="row">
+<span>Propriétaire</span>
+<span>EST-B22</span>
+</div>
+
+<div class="row">
+<span>Zone habituelle</span>
+<span>22</span>
+</div>
+
+<div class="row">
+<span>Nombre de roues</span>
+<span>2</span>
+</div>
+
+<div class="row">
+<span>Roues utilisées simultanément</span>
+<span>Variable</span>
+</div>
+
+<div class="row">
+<span>Position emblématique</span>
+<span>Y</span>
+</div>
+
+</div>
+
+<div class="massive">Y</div>
+
+<div class="sub">
+POSITION OFFICIEUSE DU FORZA APRÈS 22 H
+</div>
+
+<p>
+Plus la situation exige de la discrétion,
+plus les chances que la roue avant quitte le sol augmentent.
+</p>
+
+</section>
+
+
+<!-- FLEURIER -->
+
+<section id="fleurier">
+
+<div class="number">03 — TERRITOIRE RIVAL</div>
+
+<h2>FLEURIER</h2>
+
+<p class="big">
+À l'autre bout du canton se trouve le nom que la B22
+connaît particulièrement bien :
+<strong>Fleurier.</strong>
+</p>
+
+<div class="card">
+
+<h3>LENDRIT</h3>
+
+<p>
+Figure centrale de Fleurier : <strong>Lendrit</strong>.
+</p>
+
+<p>
+La rivalité entre Fleurier et la 22 dure depuis si longtemps
+que personne n'est désormais capable d'en donner une origine fiable.
+</p>
+
+<div class="row">
+<span>Camp</span>
+<span>Fleurier</span>
+</div>
+
+<div class="row">
+<span>Rival historique</span>
+<span>B22</span>
+</div>
+
+<div class="row">
+<span>État diplomatique</span>
+<span>Catastrophique</span>
+</div>
+
+</div>
+
+<p>
+Plusieurs tentatives de trêve auraient eu lieu.
+La plus longue aurait duré
+<strong>11 minutes et 37 secondes.</strong>
+</p>
+
+<p class="quote">
+B22 ↔ FLEURIER<br>
+AUCUN ACCORD TROUVÉ.
+</p>
+
+</section>
+
+
+<!-- STATS -->
+
+<section id="stats">
+
+<div class="number">04 — RAPPORT ANNUEL</div>
+
+<h2>STATISTIQUES<br>2025</h2>
+
+<div class="massive">10'482</div>
+<div class="sub">HOMICIDES AU MINIGUN RECENSÉS</div>
+
+<div class="massive">327%</div>
+<div class="sub">TAUX DE CRIMINALITÉ</div>
+
+<div class="massive">18'291</div>
+<div class="sub">FUSILLADES RECENSÉES</div>
+
+<div class="massive">73</div>
+<div class="sub">MINIGUNS RETROUVÉS</div>
+
+<div class="massive">4.7 SEC</div>
+<div class="sub">ESPÉRANCE MOYENNE DE TRANQUILLITÉ APRÈS 23 H</div>
+
+<div class="massive">22 / 10</div>
+<div class="sub">INDICE DE MENACE</div>
+
+
+<div class="card">
+
+<h3>BILAN B22 — 2025</h3>
+
+<div class="row">
+<span>Homicides au minigun</span>
+<span>10'482</span>
+</div>
+
+<div class="row">
+<span>Fusillades recensées</span>
+<span>18'291</span>
+</div>
+
+<div class="row">
+<span>Explosions signalées</span>
+<span>4'772</span>
+</div>
+
+<div class="row">
+<span>Véhicules abandonnés</span>
+<span>2'109</span>
+</div>
+
+<div class="row">
+<span>Rues temporairement perdues</span>
+<span>17</span>
+</div>
+
+<div class="row">
+<span>Alertes « ARAH » enregistrées</span>
+<span>219</span>
+</div>
+
+<div class="row">
+<span>Incidents B22 / Fleurier</span>
+<span>486</span>
+</div>
+
+<div class="row">
+<span>Forza observé en Y</span>
+<span>Nombre inconnu</span>
+</div>
+
+</div>
+
+<p>
+Le nombre d'homicides recensés dépasse largement
+la population totale de Bevaix.
+</p>
+
+<p>
+Aucune explication démographique satisfaisante
+n'a été fournie à ce jour.
+</p>
+
+</section>
+
+
+<!-- ARCHIVES -->
+
+<section id="archives">
+
+<div class="number">05 — DOSSIERS B22</div>
+
+<h2>ARCHIVES</h2>
+
+
+<div class="archive">
+
+<small>22.01.2025 — DOSSIER 001</small>
+
+<h3>LE MASSACRE DU MINIGUN</h3>
+
+<p>
+L'incident le plus meurtrier recensé dans l'histoire de la zone.
+</p>
+
+<p>
+Plusieurs secteurs de la 22 deviennent inaccessibles.
+Les rues sont couvertes de débris, de douilles et de véhicules détruits.
+</p>
+
+<p>
+<strong>Bilan enregistré : 10'482 morts.</strong>
+</p>
+
+<p>
+La population officielle de Bevaix étant très inférieure à ce chiffre,
+le dossier reste considéré comme statistiquement inexplicable.
+</p>
+
+</div>
+
+
+<div class="archive">
+
+<small>14.03.2025 — DOSSIER 002</small>
+
+<h3>LA NUIT ROUGE</h3>
+
+<p>
+Une montée de tension avec Fleurier transforme plusieurs rues
+en zone de chaos pendant une partie de la nuit.
+</p>
+
+<p>
+Vitres éclatées.
+Véhicules détruits.
+Routes bloquées.
+Traces de sang sur plusieurs centaines de mètres.
+</p>
+
+<p>
+À minuit, personne ne savait encore réellement
+qui poursuivait qui.
+</p>
+
+</div>
+
+
+<div class="archive">
+
+<small>07.06.2025 — DOSSIER 003</small>
+
+<h3>ARAH</h3>
+
+<p>
+Une voiture banalisée apparaît au loin.
+</p>
+
+<p>
+Est-b22 observe le véhicule pendant environ deux secondes.
+</p>
+
+<p>
+<strong>« ARAH. »</strong>
+</p>
+
+<p>
+La rue se vide.
+</p>
+
+</div>
+
+
+<div class="archive">
+
+<small>22.08.2025 — DOSSIER 004</small>
+
+<h3>INCIDENT FLEURIER</h3>
+
+<p>
+Une nouvelle montée de tension éclate entre les deux zones.
+</p>
+
+<p>
+Plusieurs véhicules sont retrouvés abandonnés.
+Deux rues deviennent impraticables.
+Des groupes disparaissent avant l'arrivée des forces de l'ordre.
+</p>
+
+</div>
+
+
+<div class="archive">
+
+<small>31.12.2025 — DOSSIER 005</small>
+
+<h3>LE BILAN</h3>
+
+<p>
+Une tentative est lancée pour calculer le nombre total
+d'incidents survenus dans la B22 durant l'année.
+</p>
+
+<p>
+<strong>Le calcul n'a jamais été terminé.</strong>
+</p>
+
+</div>
+
+
+</section>
+
+
+<!-- RAP -->
+
+<section id="rap">
+
+<div class="number">06 — NOUVELLE ÈRE</div>
+
+<h2>EST-B22<br>LE RAPPEUR</h2>
+
+<p class="big">
+Après le Forza, la 22 possède désormais sa propre voix.
+</p>
+
+<div class="card">
+
+<h3>STAR MONTANTE DE LA B22</h3>
+
+<p>
+EST-B22 s'est récemment lancé dans le rap.
+Ses premiers morceaux commencent à circuler
+et certaines phrases sont déjà associées à son nom.
+</p>
+
+<p class="quote">
+« armé dans la 2,<br>
+c’est nous les vrais mecs du 22 »
+</p>
+
+<p>
+— <strong>EST-B22</strong>
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>PROFIL ARTISTIQUE</h3>
+
+<div class="row">
+<span>Nom de scène</span>
+<span>EST-B22</span>
+</div>
+
+<div class="row">
+<span>Origine</span>
+<span>B22</span>
+</div>
+
+<div class="row">
+<span>Mouvement</span>
+<span>Rap 22</span>
+</div>
+
+<div class="row">
+<span>Statut</span>
+<span>Star montante</span>
+</div>
+
+<div class="row">
+<span>Territoire représenté</span>
+<span>La 22</span>
+</div>
+
+</div>
+
+<p class="quote">
+LE FORZA FAIT DU BRUIT.<br>
+MAINTENANT LE MICRO AUSSI.
+</p>
+
+</section>
+
+
+<footer>
+
+B22 — BEVAIX — ZONE 22<br><br>
+ARCHIVES NON OFFICIELLES
+
+</footer>
+
 
 </body>
 </html>
